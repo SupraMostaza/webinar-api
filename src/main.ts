@@ -12,11 +12,11 @@ async function bootstrap() {
   console.log('DATABASE_NAME:', process.env.DATABASE_NAME);
 
   const app = await NestFactory.create(AppModule);
-/*   app.enableCors({
-    origin: 'http://localhost:5173',
+  app.enableCors({
+    origin: 'https://webinar-web-sigma.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-  }); */
+  });
   const port = process.env.PORT || 4000;
   await app.listen(port);
 }
