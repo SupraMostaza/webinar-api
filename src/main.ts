@@ -12,11 +12,12 @@ async function bootstrap() {
   console.log('DATABASE_NAME:', process.env.DATABASE_NAME);
 
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
+/*   app.enableCors({
     origin: 'http://localhost:5173',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-  });
-  await app.listen(3000);
+  }); */
+  const port = process.env.PORT || 4000;
+  await app.listen(port);
 }
 bootstrap();
